@@ -1,0 +1,31 @@
+<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/Proyecto 14/users/Products/Templates/product_list.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <h2>{{ product.name }}</h2>
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <p>{{ product.description }}</p>
+            <p>Precio: {{ product.price }}</p>
+            <p>Disponibilidad: {{ product.availability }}</p>
+            {% if user_type == 'agricultor' or user_type == 'ganadero' %}
+            <p>Información adicional del producto:</p>
+            <ul>
+                <li>Historia: {{ product.history }}</li>
+                <li>Certificaciones: {{ product.certifications }}</li>
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/chat/templates/message_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Mensajes</h1>
+  <ul>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

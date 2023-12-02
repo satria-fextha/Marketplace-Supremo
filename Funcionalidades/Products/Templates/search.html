@@ -1,0 +1,32 @@
+<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/Proyecto 14/users/Products/Templates/search.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Productos Agrícolas y Ganaderos</title>
+  </head>
+  <body>
+    <h1>Búsqueda de Productos Agrícolas y Ganaderos</h1>
+    <form action="/search" method="GET">
+      <label for="search">Buscar:</label>
+      <input type="text" id="search" name="search">
+      <br>
+      <label for="category">Categoría:</label>
+      <select id="category" name="category">
+        <option value="">Todas</option>
+        <option value="agricultura">Agricultura</option>
+        <option value="ganaderia">Ganadería</option>
+      </select>
+      <br>
+      <label for="location">Ubicación del vendedor:</label>
+      <input type="text" id="location" name="location">
+      <br>
+      <label for="price-range">Rango de precios:</label>
+      <input type="number" id="price-range-min" name="price-range-min" placeholder="Mínimo">
+      <input type="number" id="price-range-max" name="price-range-max" placeholder="Máximo">
+      <br>
+      <button type="submit">Buscar</button>
+    </form>
+  </body>
+</html>
