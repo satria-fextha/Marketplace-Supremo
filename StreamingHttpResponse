@@ -1,0 +1,23 @@
+from django.http import StreamingHttpResponse
+import asyncio
+
+async def streaming_response():
+    try:
+        # Realiza algún trabajo aquí
+        # Itera sobre un iterador asincrónico o sincrónico que produce chunks de datos
+        yield b"chunk1"
+        yield b"chunk2"
+        # ...
+    except asyncio.CancelledError:
+        # Maneja la desconexión del cliente
+        # Puede realizar acciones de limpieza aquí
+        raise
+
+async def my_streaming_view(request):
+    response = StreamingHttpResponse(streaming_response())
+    
+    # Establece los encabezados para la descarga del archivo
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment; filename="mi_archivo.txt"'
+    
+    return response
