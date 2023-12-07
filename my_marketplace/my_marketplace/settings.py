@@ -43,4 +43,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     ...
+<<<<<<< HEAD
     'channels.middleware.ChannelMiddleware',]
+=======
+    'channels.middleware.ChannelMiddleware',]
+>>>>>>> 7257c5f1b22c5e0445336cf73e391d1e1e7d6fb6
