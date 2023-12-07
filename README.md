@@ -1,4 +1,5 @@
 Estoy tratando de implementar esto:
+
 1.	Registro de Usuarios:
 	Requisitos:
 	Tres tipos de usuarios: agricultores, ganaderos y consumidores.
