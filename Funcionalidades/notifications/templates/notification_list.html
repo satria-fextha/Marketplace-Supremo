@@ -1,4 +1,28 @@
-<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/notifications/templates/notification_list.html -->
+Explicación:
+
+Este archivo de plantilla HTML define una plantilla para mostrar una lista de notificaciones en una aplicación de notificaciones.
+
+Contenido:
+
+La plantilla extiende la plantilla base base.html.
+
+La plantilla define un encabezado <h1> con el texto "Notificaciones".
+
+La plantilla define una lista <ul> que contiene un elemento <li> para cada notificación.
+
+Cada elemento <li> contiene una división <div> con dos componentes:
+
+Un componente <div class="notification__message"> que muestra el mensaje de la notificación.
+Un componente <div class="notification__date"> que muestra la fecha de la notificación.
+Uso:
+
+Esta plantilla se utiliza para mostrar una lista de notificaciones en una página de notificaciones. La plantilla recibe una lista de notificaciones como parámetro y la recorre para mostrar cada notificación en una lista separada.
+
+Rutas:
+
+La plantilla se asocia a la siguiente ruta:
+
+/notifications/
 
 {% extends 'base.html' %}
 
