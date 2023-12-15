@@ -1,0 +1,48 @@
+Explicación:
+
+Esta plantilla muestra una lista de productos en el sitio web. Recorre una lista de productos y muestra el siguiente contenido:
+
+El nombre del producto
+Una imagen del producto
+Una descripción del producto
+El precio del producto
+La disponibilidad del producto
+Información adicional para agricultores y ganaderos
+Uso:
+
+La plantilla utiliza un bucle for para recorrer una lista de productos. Para cada producto, la plantilla muestra el nombre del producto, una imagen del producto, una descripción del producto, el precio del producto y la disponibilidad del producto.
+
+Si el usuario es un agricultor o ganadero, la plantilla también muestra información adicional sobre el producto, como su historia y certificaciones.
+
+Ruta:
+
+La plantilla se encuentra en el archivo product_list.html, que se encuentra en la ruta /path/to/.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <h2>{{ product.name }}</h2>
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <p>{{ product.description }}</p>
+            <p>Precio: {{ product.price }}</p>
+            <p>Disponibilidad: {{ product.availability }}</p>
+            {% if user_type == 'agricultor' or user_type == 'ganadero' %}
+            <p>Información adicional del producto:</p>
+            <ul>
+                <li>Historia: {{ product.history }}</li>
+                <li>Certificaciones: {{ product.certifications }}</li>
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

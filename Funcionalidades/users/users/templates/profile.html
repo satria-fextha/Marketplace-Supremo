@@ -1,0 +1,31 @@
+<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/Proyecto 14/users/templates/profile.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Perfil de Usuario</title>
+  </head>
+  <body>
+    <h1>Perfil de Usuario</h1>
+    <h2>Información Básica</h2>
+    <p>Nombre: {{ user.name }}</p>
+    <p>Ubicación: {{ user.location }}</p>
+    <p>Contacto: {{ user.contact }}</p>
+    
+    {% if user.type == 'agricultor' or user.type == 'ganadero' %}
+      <h2>Detalles del Producto</h2>
+      <p>Productos: {{ user.productos }}</p>
+      <p>Historia: {{ user.historia }}</p>
+      <p>Certificaciones: {{ user.certificaciones }}</p>
+    {% endif %}
+    
+    {% if user.type == 'consumidor' %}
+      <h2>Historial de Compras</h2>
+      <p>Compras: {{ user.compras }}</p>
+      <h2>Preferencias</h2>
+      <p>Preferencias: {{ user.preferencias }}</p>
+      <h2>Lista de Deseos</h2>
+      <p>Lista de Deseos: {{ user.lista_deseos }}</p>
+    {% endif %}
+  </body>
+</html>

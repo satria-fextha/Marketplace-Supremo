@@ -1,0 +1,38 @@
+<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/Proyecto 10/orders/templates/order_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Pedidos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID de Pedido</th>
+                <th>Fecha de Pedido</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>
+                        {% if order.status == 'En Preparación' %}
+                            <a href="{% url 'orders:accept_order' order.id %}">Aceptar</a>
+                            <a href="{% url 'orders:reject_order' order.id %}">Rechazar</a>
+                        {% elif order.status == 'Enviado' %}
+                            <a href="{% url 'orders:delivered_order' order.id %}">Entregado</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay pedidos disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

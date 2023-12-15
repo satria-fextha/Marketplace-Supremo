@@ -1,0 +1,53 @@
+Explicación:
+
+Este archivo HTML define un formulario para buscar productos agrícolas y ganaderos en el sitio web. El formulario permite a los usuarios especificar los siguientes criterios de búsqueda:
+
+Palabra clave: El usuario puede ingresar una palabra clave o frase para buscar productos específicos.
+
+Categoría: El usuario puede seleccionar una categoría de productos, como agricultura o ganadería.
+
+Ubicación del vendedor: El usuario puede ingresar una ubicación para buscar productos de vendedores que se encuentren en esa ubicación.
+
+Rango de precios: El usuario puede especificar un rango de precios para refinar la búsqueda de productos.
+
+Uso:
+
+El formulario se utiliza para enviar una solicitud de búsqueda al servidor. El servidor procesará la solicitud y devolverá una lista de productos que coincidan con los criterios de búsqueda especificados por el usuario.
+
+Ruta:
+
+El archivo HTML se encuentra en la siguiente ruta:
+
+Funcionalidades/Products/Templates/search.html
+Esta ruta indica que el archivo se encuentra en la carpeta Funcionalidades/Products/Templates dentro del proyecto.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Productos Agrícolas y Ganaderos</title>
+  </head>
+  <body>
+    <h1>Búsqueda de Productos Agrícolas y Ganaderos</h1>
+    <form action="/search" method="GET">
+      <label for="search">Buscar:</label>
+      <input type="text" id="search" name="search">
+      <br>
+      <label for="category">Categoría:</label>
+      <select id="category" name="category">
+        <option value="">Todas</option>
+        <option value="agricultura">Agricultura</option>
+        <option value="ganaderia">Ganadería</option>
+      </select>
+      <br>
+      <label for="location">Ubicación del vendedor:</label>
+      <input type="text" id="location" name="location">
+      <br>
+      <label for="price-range">Rango de precios:</label>
+      <input type="number" id="price-range-min" name="price-range-min" placeholder="Mínimo">
+      <input type="number" id="price-range-max" name="price-range-max" placeholder="Máximo">
+      <br>
+      <button type="submit">Buscar</button>
+    </form>
+  </body>
+</html>
