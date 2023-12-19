@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Payment(models.Model):
     PAYMENT_METHODS = (
         ('paypal', 'PayPal'),
@@ -30,6 +29,7 @@ class Invoice(models.Model):
     
     def __str__(self):
         return f"{self.user.username} - {self.invoice_number}"
+
 
 class PaymentGateway(models.Model):
     name = models.CharField(max_length=50)
@@ -60,3 +60,12 @@ class InvoiceItem(models.Model):
     
     def __str__(self):
         return self.name
+
+
+class Commission(models.Model):
+    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
+    commission_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    def __str__(self):
+        return f"{self.seller.username} - {self.commission_amount}"

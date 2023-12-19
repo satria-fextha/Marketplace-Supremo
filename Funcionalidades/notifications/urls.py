@@ -1,4 +1,11 @@
 from django.urls import path
+from . import views
+
+urlpatterns = [
+    # Route for notifications page
+    path('notifications/', views.notifications, name='notifications'),
+    # Add more routes for other notification-related functionality if needed
+]
 
 from . import views
 

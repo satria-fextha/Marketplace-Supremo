@@ -1,3 +1,36 @@
+from django.shortcuts import render, redirect
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+
+User = get_user_model()
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Send verification email or SMS
+            # Logic for sending verification message
+            return redirect('verification')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def verification(request):
+    # Logic for verifying email or phone number
+    return render(request, 'registration/verification.html')
+
+@login_required
+def profile(request):
+    user = request.user
+    if user.user_type == User.FARMER:
+        profile = user.farmer_profile
+    elif user.user_type == User.LIVESTOCK_FARMER:
+        profile = user.livestock_farmer_profile
+    else:
+        profile = user.consumer_profile
+    return render(request, 'profile.html', {'profile': profile})
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager

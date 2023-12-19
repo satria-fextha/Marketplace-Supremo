@@ -98,6 +98,7 @@ def consumer_register(request):
         form = ConsumerSignUpForm()
     return render(request, 'users/consumer_register.html', {'form': form})
 
+
 @login_required
 def profile(request):
     user = request.user

@@ -31,3 +31,20 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+class Vendor(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    rating = models.DecimalField(max_digits=3, decimal_places=2)
+    reviews = models.ManyToManyField(Review, related_name='vendors')
+
+    def __str__(self):
+        return self.name
+
+class ReportedReview(models.Model):
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
+    reporter = models.ForeignKey(User, on_delete=models.CASCADE)
+    reason = models.TextField()
+
+    def __str__(self):
+        return f'Reported Review: {self.review} - Reporter: {self.reporter}'

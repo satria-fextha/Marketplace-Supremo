@@ -33,8 +33,26 @@ def payment_done(request):
     order = Order.objects.get(id=order_id)
     order.paid = True
     order.save()
+    # Generate invoice or receipt logic here
+    # Send notification to the consumer
     return render(request, 'payment/done.html')
 
 @csrf_exempt
 def payment_canceled(request):
+    # Handle payment cancellation logic here
     return render(request, 'payment/canceled.html')
+
+# Additional code for integrating with other payment gateways and charging commissions
+# ...
+
+# Integration with other payment gateways
+def integrate_payment_gateway(request):
+    # Code for integrating with other payment gateways
+    return render(request, 'payment/integrate_payment_gateway.html')
+
+# Charging commissions for sales
+def charge_commissions(request):
+    # Code for charging commissions for sales
+    return render(request, 'payment/charge_commissions.html')
+
+

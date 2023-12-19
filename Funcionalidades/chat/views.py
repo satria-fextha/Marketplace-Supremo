@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -31,6 +30,8 @@ def new_message(request, conversation_id):
         )
         message.save()
         messages.success(request, 'Mensaje enviado exitosamente.')
+        # Send notification to both consumer and seller
+        # Code for sending notification goes here
         return HttpResponseRedirect(reverse('chat:conversation', args=[conversation.id]))
     else:
         return render(request, 'chat/new_message.html', {'conversation': conversation})

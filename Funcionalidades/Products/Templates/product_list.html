@@ -1,22 +1,4 @@
-Explicación:
 
-Esta plantilla muestra una lista de productos en el sitio web. Recorre una lista de productos y muestra el siguiente contenido:
-
-El nombre del producto
-Una imagen del producto
-Una descripción del producto
-El precio del producto
-La disponibilidad del producto
-Información adicional para agricultores y ganaderos
-Uso:
-
-La plantilla utiliza un bucle for para recorrer una lista de productos. Para cada producto, la plantilla muestra el nombre del producto, una imagen del producto, una descripción del producto, el precio del producto y la disponibilidad del producto.
-
-Si el usuario es un agricultor o ganadero, la plantilla también muestra información adicional sobre el producto, como su historia y certificaciones.
-
-Ruta:
-
-La plantilla se encuentra en el archivo product_list.html, que se encuentra en la ruta /path/to/.
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,6 +8,21 @@ La plantilla se encuentra en el archivo product_list.html, que se encuentra en l
 </head>
 <body>
     <h1>Lista de Productos</h1>
+    <div>
+        <h2>Filtros de Búsqueda</h2>
+        <form>
+            <input type="text" name="search" placeholder="Buscar por nombre">
+            <select name="category">
+                <option value="">Todas las categorías</option>
+                <option value="vegetales">Vegetales</option>
+                <option value="carne">Carne</option>
+                <option value="lacteos">Lácteos</option>
+            </select>
+            <input type="number" name="min_price" placeholder="Precio mínimo">
+            <input type="number" name="max_price" placeholder="Precio máximo">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
     <ul>
         {% for product in products %}
         <li>
@@ -41,6 +38,7 @@ La plantilla se encuentra en el archivo product_list.html, que se encuentra en l
                 <li>Certificaciones: {{ product.certifications }}</li>
             </ul>
             {% endif %}
+            <p>Categoría: {{ product.category }}</p>
         </li>
         {% endfor %}
     </ul>

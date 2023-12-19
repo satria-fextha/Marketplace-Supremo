@@ -1,5 +1,3 @@
-<!-- FILEPATH: /c:/Users/jorge/OneDrive/Escritorio/Empezando de nuevo/Proyecto 10/orders/templates/order_list.html -->
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -26,6 +24,7 @@
                         {% elif order.status == 'Enviado' %}
                             <a href="{% url 'orders:delivered_order' order.id %}">Entregado</a>
                         {% endif %}
+                        <a href="{% url 'orders:view_order' order.id %}">Ver Detalles</a>
                     </td>
                 </tr>
             {% empty %}
@@ -35,4 +34,34 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <h2>Carro de Compras</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <a href="{% url 'cart:remove_item' item.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">El carro de compras está vacío.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Total a Pagar: {{ cart_total }}</h3>
 {% endblock %}
