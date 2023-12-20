@@ -1,4 +1,4 @@
-
+Funcionalidades/Products/views.py
 from django.shortcuts import render, redirect
 from .models import Product, Category
 

@@ -1,4 +1,4 @@
-<!-- FILEPATH:/c:/Users/jorge/OneDrive/Escritorio/Marketplace/Funcionalidades/chat/ChatConsumer.py
+Funcionalidades/chat/ChatConsumer.py
 from channels.generic.websocket import AsyncWebsocketConsumer
 import json
 

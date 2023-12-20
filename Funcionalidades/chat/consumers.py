@@ -1,5 +1,4 @@
-/c:/Users/jorge/OneDrive/Escritorio/Marketplace/Funcionalidades/chat/consumers.py
-
+Funcionalidades/chat/ChatConsumer.py
 from channels.generic.websocket import WebsocketConsumer
 from channels.generic.websocket import WebsocketConsumer
 from channels.layers import get_channel_layer

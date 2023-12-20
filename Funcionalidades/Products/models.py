@@ -1,4 +1,4 @@
-
+Funcionalidades/Products/models.py
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
 

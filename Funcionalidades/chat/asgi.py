@@ -1,4 +1,4 @@
-"""
+Funcionalidades/chat/asgi.py"""
 ASGI config for chat application.
 
 It exposes the ASGI callable as a module-level variable named `application`.
