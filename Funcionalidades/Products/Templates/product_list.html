@@ -1,4 +1,24 @@
 Funcionalidades/Products/Templates/product_list.html
+<script>
+    function searchProducts() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('search');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("productList");
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,6 +56,12 @@ Funcionalidades/Products/Templates/product_list.html
             <ul>
                 <li>Historia: {{ product.history }}</li>
                 <li>Certificaciones: {{ product.certifications }}</li>
+                <li>Nombre del producto: {{ product.name }}</li>
+                <li>Tipo de producto: {{ product.type }}</li>
+                <li>Precio del producto: {{ product.price }}</li>
+                <li>Ubicación del vendedor: {{ product.seller_location }}</li>
+                <li>Rango de precios: {{ product.price_range }}</li>
+                <li>Categoría del producto: {{ product.category }}</li>
             </ul>
             {% endif %}
             <p>Categoría: {{ product.category }}</p>

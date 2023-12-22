@@ -1,4 +1,26 @@
 Funcionalidades/Products/views.py
+from django.db.models import Q
+
+def search_and_filter_products(request):
+    query = request.GET.get('q')
+    category_id = request.GET.get('category')
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    location = request.GET.get('location')
+    products = Product.objects.all()
+    if query:
+        products = products.filter(Q(name__icontains=query) | Q(description__icontains=query) | Q(type__icontains=query) | Q(price__icontains=query))
+    if category_id:
+        category = Category.objects.get(id=category_id)
+        products = products.filter(category=category)
+    if min_price:
+        products = products.filter(price__gte=min_price)
+    if max_price:
+        products = products.filter(price__lte=max_price)
+    if location:
+        products = products.filter(location=location)
+    return render(request, 'search_and_filter_products.html', {'query': query, 'products': products})
+
 from django.shortcuts import render, redirect
 from .models import Product, Category
 

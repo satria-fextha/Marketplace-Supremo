@@ -22,3 +22,42 @@
         <button type="submit">Registrarse</button>
     </form>
 {% endblock %}
+
+{% block profile %}
+    <h2>Perfil de Usuario</h2>
+    <form method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <label for="location">Ubicación:</label>
+        <input type="text" name="location" id="location">
+        <br><br>
+        <label for="contact">Contacto:</label>
+        <input type="text" name="contact" id="contact">
+        <br><br>
+        {% if user_type == 'agricultor' or user_type == 'ganadero' %}
+            <h3>Detalles del Producto</h3>
+            <textarea name="product_details" id="product_details"></textarea>
+            <br><br>
+            <label for="history">Historia:</label>
+            <textarea name="history" id="history"></textarea>
+            <br><br>
+            <label for="certifications">Certificaciones:</label>
+            <textarea name="certifications" id="certifications"></textarea>
+            <br><br>
+        {% endif %}
+        {% if user_type == 'consumidor' %}
+            <h3>Preferencias</h3>
+            <textarea name="preferences" id="preferences"></textarea>
+            <br><br>
+            <label for="purchase_history">Historial de Compras:</label>
+            <textarea name="purchase_history" id="purchase_history"></textarea>
+            <br><br>
+            <label for="wishlist">Lista de Deseos:</label>
+            <textarea name="wishlist" id="wishlist"></textarea>
+            <br><br>
+        {% endif %}
+        <button type="submit">Actualizar Perfil</button>
+    </form>
+{% endblock %}
+

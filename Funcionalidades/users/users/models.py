@@ -5,6 +5,20 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+    contact = models.CharField(max_length=100)
+    product_details = models.TextField(blank=True)
+    history = models.TextField(blank=True)
+    certifications = models.TextField(blank=True)
+    purchase_history = models.TextField(blank=True)
+    preferences = models.TextField(blank=True)
+    wishlist = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.user.username
 
 def register(request):
     if request.method == 'POST':
