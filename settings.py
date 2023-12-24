@@ -8,33 +8,35 @@ ALLOWED_HOSTS = ['foodbridge.net', 'www.foodbridge.net']
 
 # Configuración de archivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'LAS 10 FUNCIONALIDADES', 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Funcionalidades', 'static')]
 
 # Configuración de archivos de medios
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'LAS 10 FUNCIONALIDADES', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Funcionalidades', 'media')
 
+# Configuración de la base de datos
 # Configuración de la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # o cambia a 'django.db.backends.postgresql' si estás usando PostgreSQL
-        'NAME': 'wbmtrlih_miapp',  # El nombre de tu base de datos
-        'USER': 'wbmtrlih_jorge',  # Tu nombre de usuario
-        'PASSWORD': 'L1maperu+1',  # La contraseña que estableciste
-        'HOST': 'localhost',  # Como te indicaron, será 'localhost'
-        'PORT': '',  # Deja en blanco para el puerto por defecto
+        'NAME': 'wbmtrlih_marketplace_database',  # Cambia esto al nombre de tu nueva base de datos
+        'USER': 'wbmtrlih_jorge',  # Corrige aquí añadiendo la coma
+        'PASSWORD': 'L1maperu+1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 # Sección INSTALLED_APPS
 INSTALLED_APPS = [
     # ... otras aplicaciones ...
-    'Products',
-    'chat',
-    'notifications',
-    'orders',
-    'payments',
-    'reviews',
-    'users.users',
-    'members',
+    'Funcionalidades.chat',
+    'Funcionalidades.notifications',
+    'Funcionalidades.orders',
+    'Funcionalidades.payments',
+    'Funcionalidades.Products',
+    'Funcionalidades.reviews',
+    'Funcionalidades.users.users',
 ]
+
+# ...
+
