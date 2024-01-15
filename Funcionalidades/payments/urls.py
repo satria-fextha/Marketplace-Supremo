@@ -1,4 +1,16 @@
-Funcionalidades/payments/urls.py
+from django.urls import path
+
+from . import views
+
+app_name = 'payments'
+
+urlpatterns = [
+    path('', views.payment_process, name='payment_process'),
+    path('done/', views.payment_done, name='payment_done'),
+    path('canceled/', views.payment_canceled, name='payment_canceled'),
+    path('integrate/', views.integrate_payment_gateway, name='integrate_payment_gateway'),
+    path('charge/', views.charge_commissions, name='charge_commissions'),
+]
 from django.urls import path
 
 from . import views

@@ -2,6 +2,8 @@ Funcionalidades/chat/urls.py
 from django.urls import path
 
 from . import views
+from django.urls import path
+from . import views
 
 urlpatterns = [
     # Rutas de la interfaz de usuario

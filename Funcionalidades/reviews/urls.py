@@ -1,17 +1,25 @@
 Funcionalidades/reviews/urls.py
 from django.urls import path
 from . import views
+from django.urls import path
+from . import views
+
+app_name = 'payment'
 
 urlpatterns = [
-    path('products/<int:product_id>/rate/', views.rate_product, name='rate_product'),
-    path('vendors/<int:vendor_id>/rate/', views.rate_vendor, name='rate_vendor'),
-    path('reviews/report/<int:review_id>/', views.report_review, name='report_review'),
+    path('process/', views.payment_process, name='process'),
+    path('done/', views.payment_done, name='done'),
+    path('canceled/', views.payment_canceled, name='canceled'),
+    path('integrate/', views.integrate_payment_gateway, name='integrate'),
+    path('charge/', views.charge_commissions, name='charge'),
 ]
 
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.all_products, name='all_products'),
-    path('products/<int:product_id>/', views.product_detail, name='product_detail'),
-    path('reviews/submit/', views.review_submit, name='review_submit'),
+    path('products/<int:product_id>/rate/', views.calificar_producto, name='calificar_producto'),
+    path('vendors/<int:vendedor_id>/rate/', views.calificar_vendedor, name='calificar_vendedor'),
+    path('reviews/write/<int:product_id>/', views.escribir_resena, name='escribir_resena'),
+    path('reviews/report/<int:resena_id>/', views.reportar_resena, name='reportar_resena'),
 ]
