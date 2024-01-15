@@ -10,6 +10,8 @@ path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirm
 path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
 
 from . import views
+from django.urls import path
+from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -19,4 +21,9 @@ urlpatterns = [
     path('consumer_register/', views.consumer_register, name='consumer_register'),
     path('verify_email/', views.verify_email, name='verify_email'),
     path('profile/', views.profile, name='profile'),
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('signup/', views.register, name='register'),
+    path('profile/', views.profile, name='profile'),
 ]
+
