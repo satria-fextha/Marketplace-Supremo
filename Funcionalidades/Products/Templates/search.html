@@ -1,0 +1,98 @@
+Funcionalidades/Products/Templates/search.html
+<script>
+  function buscarProducto() {
+    var input, filtro, ul, li, a, i, txtValue;
+    input = document.getElementById('search');
+    filtro = input.value.toUpperCase();
+    ul = document.getElementById("product-list");
+    li = ul.getElementsByTagName('li');
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filtro) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+</script>
+<script>
+  function ordenarProductos() {
+    var lista, i, switching, b, shouldSwitch;
+    lista = document.getElementById("product-list");
+    switching = true;
+    while (switching) {
+      switching = false;
+      b = lista.getElementsByTagName("LI");
+      for (i = 0; i < (b.length - 1); i++) {
+        shouldSwitch = false;
+        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        b[i].parentNode.insertBefore(b[i + 1], b[i]);
+        switching = true;
+      }
+    }
+  }
+</script>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Productos Agrícolas y Ganaderos</title>
+  </head>
+  <body>
+    <h1>Búsqueda de Productos Agrícolas y Ganaderos</h1>
+    <form action="/search" method="GET">
+      <label for="search">Buscar:</label>
+      <input type="text" id="search" name="search">
+      <br>
+      <label for="category">Categoría:</label>
+      <select id="category" name="category">
+        <option value="">Todas</option>
+        <option value="agricultura">Agricultura</option>
+        <option value="ganaderia">Ganadería</option>
+      </select>
+      <br>
+      <label for="location">Ubicación del vendedor:</label>
+      <input type="text" id="location" name="location">
+      <br>
+      <label for="price-range">Rango de precios:</label>
+      <input type="number" id="price-range-min" name="price-range-min" placeholder="Mínimo">
+      <input type="number" id="price-range-max" name="price-range-max" placeholder="Máximo">
+      <br>
+      <button type="submit">Buscar</button>
+    </form>
+    
+    <h2>Listados de Productos</h2>
+    <div class="product-list">
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Producto 1</h3>
+        <p>Descripción del producto 1.</p>
+        <p>Precio: $10.00</p>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Producto 2</h3>
+        <p>Descripción del producto 2.</p>
+        <p>Precio: $15.00</p>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Producto 3</h3>
+        <p>Descripción del producto 3.</p>
+        <p>Precio: $20.00</p>
+      </div>
+    </div>
+  </body>
+</html>

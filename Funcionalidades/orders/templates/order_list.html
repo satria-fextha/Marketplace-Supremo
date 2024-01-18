@@ -1,0 +1,68 @@
+Funcionalidades/orders/templates/order_list.html
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Pedidos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID de Pedido</th>
+                <th>Fecha de Pedido</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.date }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>
+                        {% if order.status == 'En Preparación' %}
+                            <a href="{% url 'orders:accept_order' order.id %}">Aceptar</a>
+                            <a href="{% url 'orders:reject_order' order.id %}">Rechazar</a>
+                        {% elif order.status == 'Enviado' %}
+                            <a href="{% url 'orders:delivered_order' order.id %}">Entregado</a>
+                        {% endif %}
+                        <a href="{% url 'orders:view_order' order.id %}">Ver Detalles</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay pedidos disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Carro de Compras</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <a href="{% url 'cart:remove_item' item.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">El carro de compras está vacío.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Total a Pagar: {{ cart_total }}</h3>
+{% endblock %}

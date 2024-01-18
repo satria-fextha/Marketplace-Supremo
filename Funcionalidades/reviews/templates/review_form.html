@@ -1,0 +1,50 @@
+Funcionalidades/reviews/templates/review_form.html
+<!-- Formulario de reseñas -->
+<form action="{% url 'review_submit' %}" method="POST">
+  {% csrf_token %}
+  <h3>Deja tu reseña</h3>
+  <label for="product_rating">Calificación del producto:</label>
+  <select name="product_rating" id="product_rating" required>
+    <option value="">Selecciona una opción</option>
+    <option value="5">5 estrellas</option>
+    <option value="4">4 estrellas</option>
+    <option value="3">3 estrellas</option>
+    <option value="2">2 estrellas</option>
+    <option value="1">1 estrella</option>
+  </select>
+  <br>
+  <label for="seller_rating">Calificación del vendedor:</label>
+  <select name="seller_rating" id="seller_rating" required>
+    <option value="">Selecciona una opción</option>
+    <option value="5">5 estrellas</option>
+    <option value="4">4 estrellas</option>
+    <option value="3">3 estrellas</option>
+    <option value="2">2 estrellas</option>
+    <option value="1">1 estrella</option>
+  </select>
+  <br>
+  <label for="review_text">Escribe tu reseña:</label>
+  <textarea name="review_text" id="review_text" rows="5" required></textarea>
+  <br>
+  <button type="submit">Enviar reseña</button>
+</form>
+
+<!-- Moderación de reseñas -->
+{% if user.is_staff %}
+  <h3>Reseñas pendientes de moderación:</h3>
+  <ul>
+    {% for review in pending_reviews %}
+      <li>
+        {{ review.review_text }} - {{ review.user.username }} - {{ review.date_created }}
+        <form action="{% url 'review_moderate' review.id %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="review_id" value="{{ review.id }}">
+          <button type="submit" name="action" value="approve">Aprobar</button>
+          <button type="submit" name="action" value="reject">Rechazar</button>
+        </form>
+      </li>
+    {% empty %}
+      <p>No hay reseñas pendientes de moderación.</p>
+    {% endfor %}
+  </ul>
+{% endif %}

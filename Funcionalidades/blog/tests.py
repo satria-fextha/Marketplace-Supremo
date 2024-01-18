@@ -1,0 +1,1 @@
+El filepath es: /c:/Users/jorge/OneDrive/Escritorio/Marketplace/Funcionalidades/blog/tests.py
