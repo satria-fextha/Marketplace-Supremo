@@ -1,1 +1,0 @@
-El Filepath es: /c:/Users/jorge/OneDrive/Escritorio/Marketplace/Funcionalidades/características_avanzadas/tests.py
