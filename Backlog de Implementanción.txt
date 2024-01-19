@@ -1,0 +1,107 @@
+Backlog de Implementación
+1.Registro de Usuarios:Alta
+Backend:
+Crear modelos de usuario para agricultores, ganaderos y consumidores.
+Implementar autenticación por correo electrónico o número de teléfono y contraseña.
+Desarrollar la lógica de selección de tipo de usuario y enviar correos o SMS de verificación.
+Frontend (Next.js):
+Crear páginas y formularios de registro.
+Manejar la verificación de correo electrónico o número de teléfono.
+Desarrollar páginas de perfil específicas para cada tipo de usuario.
+2.Perfiles de Usuarios:Alta
+Backend:
+Crear modelos y vistas para almacenar información básica y detalles específicos para agricultores, ganaderos y consumidores.
+Frontend:
+Crear páginas y formularios para que los usuarios completen o editen sus perfiles.
+3.Listados de Productos:Alta
+Backend:
+Implementar modelos y vistas para productos.
+Desarrollar la lógica para que agricultores y ganaderos publiquen productos.
+Frontend:
+Crear páginas para mostrar productos, categorías y opciones de búsqueda.
+4.Motor de Búsqueda y Filtros:Alta
+Backend:
+Implementar un motor de búsqueda que admita filtros.
+Frontend:
+Crear interfaces para búsqueda y filtros.
+5.Carro de Compras:Alta
+Backend:
+Implementar lógica para agregar productos al carro.
+Frontend:
+Crear páginas y componentes para gestionar el carro de compras.
+6.Sistema de Pago:Alta
+Backend:
+Integrar pasarelas de pago (PayPal, tarjetas, etc.).
+Generar facturas y gestionar comisiones por ventas.
+Frontend:
+Desarrollar flujo de pago y notificaciones.
+7.Calificaciones y Reseñas:Alta
+Backend:
+Implementar sistema de calificaciones y reseñas con moderación.
+Frontend:
+Desarrollar interfaces para calificar productos y vendedores.
+8.Mensajería:Media
+Backend:
+Crear sistema de mensajería entre consumidores y vendedores.
+Frontend:
+Implementar notificaciones para nuevos mensajes.
+9.Sistema de Notificaciones:Media
+Backend:
+Desarrollar sistema de notificaciones basado en eventos.
+Frontend:
+Crear sección en perfiles para ver y gestionar notificaciones.
+10.Gestión de Pedidos:Media
+Backend:
+Implementar lógica para que vendedores gestionen pedidos y consumidores vean el estado.
+Frontend:
+Crear páginas para gestionar pedidos desde el lado del vendedor y del consumidor.
+11.Sistema de Recomendación:Media
+Backend:
+Desarrollar algoritmo basado en historial de compras y preferencias.
+Frontend:
+Mostrar productos recomendados en función de la actividad del usuario.
+12.Panel de Administración:Baja
+Backend:
+Crear vistas y modelos para la gestión de usuarios, productos y pedidos.
+Frontend:
+Desarrollar interfaces para que los administradores monitoreen y gestionen la plataforma.
+13.Atención al Cliente:Alta
+Backend:
+Implementar canales de comunicación y base de conocimientos.
+Frontend:
+Crear interfaces para soporte y búsqueda en la base de conocimientos.
+14.Política de Devoluciones y Reembolsos:Alta
+Backend:
+Definir y aplicar políticas de devolución y reembolso.
+Frontend:
+Informar a los consumidores sobre la política y proporcionar herramientas para solicitar devoluciones o reembolsos.
+15.Gestión de Comisiones:Alta
+Backend:
+Desarrollar sistema automático de cálculo de comisiones.
+Frontend:
+Proporcionar informes detallados a vendedores sobre comisiones y ventas.
+16.Escalabilidad:Media
+Backend:
+Implementar arquitectura escalable utilizando servidores en la nube.
+Frontend:
+Preparar la interfaz para nuevas funcionalidades y manejar un aumento en usuarios y transacciones.
+17.Redes Sociales y Compartir:Media
+Backend:
+Integrar con redes sociales y desarrollar herramientas de marketing.
+Frontend:
+Crear opciones para que los usuarios compartan productos en redes sociales.
+18.Funcionalidad Avanzada:Baja
+Backend:
+Integrar herramientas de Inteligencia Artificial (IA) o análisis de datos.
+Frontend:
+Implementar funcionalidades avanzadas basadas en IA para mejorar la experiencia del usuario.
+19.Programa de Afiliados:Baja
+Backend:
+Implementar sistema de afiliados con recompensas.
+Frontend:
+Crear páginas y enlaces de afiliados.
+20.Programa de Lealtad y Recompensas:Baja
+Backend:
+Desarrollar sistema de acumulación y canje de puntos.
+Frontend:
+Integrar la visualización de puntos en perfiles y pasarelas de pago.
