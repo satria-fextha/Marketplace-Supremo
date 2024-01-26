@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Estoy tratando de implementar esto:
 1.Registro de Usuarios:
 
@@ -177,3 +178,6 @@ Requisitos:
 Espacio dedicado a artículos, noticias y contenido relacionado con la agricultura, ganadería y productos ofertados.
 Lógica:
 Ayuda a educar a los consumidores, mejorar la visibilidad en motores de búsqueda (SEO) y establecer autoridad en el sector.
+=======
+# Marketplace-Supremo
+>>>>>>> 2f30713402abfbf535240bc4db58d3d8c893105e
