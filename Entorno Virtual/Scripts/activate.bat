@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD
 set VIRTUAL_ENV=C:\Users\jorge\OneDrive\Escritorio\Marketplace Supremo\Entorno Virtual
+=======
+set VIRTUAL_ENV=C:\Users\jorge\OneDrive\Escritorio\Marketplace 2.0\Entorno Virtual
+>>>>>>> 9f8977dac8069a8d52198073719940f5b2584fb9
 
 if not defined PROMPT set PROMPT=$P$G
 
