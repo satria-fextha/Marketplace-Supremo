@@ -2,7 +2,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Define User models for farmers, livestock owners, and consumers
+# Define user models for farmers, livestock owners, and consumers
 class Farmer(AbstractUser):
     # Define attributes specific to farmers
     # ...

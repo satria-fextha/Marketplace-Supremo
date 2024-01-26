@@ -1,32 +1,18 @@
 from django.apps import AppConfig
-from django.apps import AppConfig
-from autenticacion.models import Agricultor, Ganadero, Consumidor
-from autenticacion.utils import send_verification_email, send_verification_sms
-from django.db.models.signals import post_save
-
 
 class AutenticacionConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "autenticacion"
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'autenticacion'
 
     def ready(self):
-        import autenticacion.signals  # Import signals module for email/phone verification
-
-        # Implementar la lógica para verificar la autenticidad de los correos electrónicos o números de teléfono
-        # y enviar correos o SMS de verificación después del registro
-        def create_user(sender, instance, created, **kwargs):
-            if created:
-                if isinstance(instance, Agricultor):
-                    # Implementar la lógica para enviar correos electrónicos de verificación para agricultores
-                    send_verification_email(instance.email)
-                elif isinstance(instance, Ganadero):
-                    # Implementar la lógica para enviar SMS de verificación para ganaderos
-                    send_verification_sms(instance.phone_number)
-                elif isinstance(instance, Consumidor):
-                    # Implementar la lógica para enviar correos electrónicos de verificación para consumidores
-                    send_verification_email(instance.email)
-
-        # Registrar el evento de creación de usuario para ejecutar la función create_user
-        post_save.connect(create_user, sender=Agricultor)
-        post_save.connect(create_user, sender=Ganadero)
-        post_save.connect(create_user, sender=Consumidor)
+        import autenticacion.signals
+        # Registro de Usuarios - Backend (Python y Django)
+        # Crear modelos de usuario para agricultores, ganaderos y consumidores.
+        # Definir los atributos necesarios para cada tipo de usuario en el modelo de datos.
+        # Implementar las funciones CRUD (Crear, Leer, Actualizar, Eliminar) para cada modelo de usuario.
+        # Implementar autenticación por correo electrónico o número de teléfono y contraseña.
+        # Utilizar una biblioteca de autenticación segura para almacenar las contraseñas de manera segura.
+        # Implementar la lógica para verificar la autenticidad de los correos electrónicos o números de teléfono.
+        # Desarrollar la lógica de selección de tipo de usuario y enviar correos o SMS de verificación.
+        # Crear una interfaz de usuario para seleccionar el tipo de usuario durante el registro.
+        # Implementar la lógica para enviar correos electrónicos o SMS de verificación después del registro.
