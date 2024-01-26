@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marketplace Supremo</title>
+</head>
+<body>
+    <h1>Bienvenido a Marketplace Supremo</h1>
+    <form action="/registro" method="POST">
+        <label for="tipo_usuario">Selecciona tu tipo de usuario:</label>
+        <select name="tipo_usuario" id="tipo_usuario">
+            <option value="agricultor">Agricultor</option>
+            <option value="ganadero">Ganadero</option>
+            <option value="consumidor">Consumidor</option>
+        </select>
+        <br>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <br>
+        <input type="password" name="contrasena" placeholder="Contraseña" required>
+        <br>
+        <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
