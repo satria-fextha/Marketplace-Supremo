@@ -1,18 +1,16 @@
+from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class Agricultor(AbstractUser):
-    # Atributos específicos del agricultor
     direccion = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
 
 class Ganadero(AbstractUser):
-    # Atributos específicos del ganadero
     direccion = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
 
 class Consumidor(AbstractUser):
-    # Atributos específicos del consumidor
     direccion = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
 

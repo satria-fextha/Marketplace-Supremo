@@ -10,8 +10,10 @@ class Farmer(AbstractUser):
 class LivestockOwner(AbstractUser):
     # Define attributes specific to livestock owners
     # ...
+    pass
 
 class Consumer(AbstractUser):
+    pass
     # Define attributes specific to consumers
     # ...
 
