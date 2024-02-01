@@ -1,0 +1,27 @@
+Alta Prioridad:
+
+Autenticación y autorización seguras:
+Implementación de protocolos de autenticación robustos (por ejemplo, OAuth2) y autorización basada en roles.
+Almacenamiento de contraseñas de forma segura utilizando algoritmos hash y salting.
+Protección contra ataques de fuerza bruta y relleno de credenciales.
+Seguridad de datos:
+Encriptación de datos sensibles en la base de datos y durante la transmisión.
+Implementación de medidas de control de acceso para proteger la información confidencial.
+Monitorización y prevención de fugas de datos.
+Pruebas de seguridad:
+Realización de pruebas de penetración y análisis de vulnerabilidades para identificar y corregir debilidades en el sistema.
+Implementación de un programa de pruebas de seguridad continuo.
+Media Prioridad:
+
+Gestión de vulnerabilidades:
+Monitorización y actualización constante del software para corregir vulnerabilidades conocidas.
+Implementación de un proceso para la rápida detección y respuesta a incidentes de seguridad.
+Capacitación en seguridad:
+Brindar capacitación al personal sobre las mejores prácticas de seguridad informática.
+Concienciar a los usuarios sobre los riesgos de seguridad y cómo protegerse.
+Baja Prioridad:
+
+Implementación de un sistema de detección de intrusiones (IDS):
+Monitorización de la red y el sistema para detectar actividades sospechosas.
+Implementación de un sistema de prevención de intrusiones (IPS):
+Bloqueo automático de actividades maliciosas en la red.
