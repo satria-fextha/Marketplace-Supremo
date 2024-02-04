@@ -6,7 +6,8 @@ from django.db import models
 class Farmer(AbstractUser):
     # Define attributes specific to farmers
     # ...
-pass  # fix
+    pass
+    
 class LivestockOwner(AbstractUser):
     # Define attributes specific to livestock owners
     # ...
