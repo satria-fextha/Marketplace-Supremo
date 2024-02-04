@@ -23,7 +23,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,26 +30,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Tus aplicaciones aquí
-    'administracion',
-    'afiliados',
-    'atencion',
+    # Tus aplicaciones
     'autenticacion',
-    'calificaciones',
-    'carro',
-    'comisiones',
-    'devoluciones',
-    'lealtad',
-    'mensajeria',
-    'notificaciones',
-    'opiniones',
-    'pagos',
-    'pedidos',
     'perfiles',
     'productos',
+    'carro',
+    'pagos',
+    'calificaciones',
+    'mensajeria',
+    'notificaciones',
+    'pedidos',
     'recomendaciones',
+    'administracion',
+    'atencion',
+    'devoluciones',
+    'comisiones',
+    'afiliados',
     'recompensas',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
