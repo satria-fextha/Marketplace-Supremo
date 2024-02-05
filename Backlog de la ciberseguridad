@@ -1,27 +1,54 @@
-Alta Prioridad:
+Prioridad Alta:
 
-Autenticación y autorización seguras:
-Implementación de protocolos de autenticación robustos (por ejemplo, OAuth2) y autorización basada en roles.
-Almacenamiento de contraseñas de forma segura utilizando algoritmos hash y salting.
-Protección contra ataques de fuerza bruta y relleno de credenciales.
-Seguridad de datos:
-Encriptación de datos sensibles en la base de datos y durante la transmisión.
-Implementación de medidas de control de acceso para proteger la información confidencial.
-Monitorización y prevención de fugas de datos.
-Pruebas de seguridad:
-Realización de pruebas de penetración y análisis de vulnerabilidades para identificar y corregir debilidades en el sistema.
-Implementación de un programa de pruebas de seguridad continuo.
+Autenticación y Autorización Seguras:
+
+Implementación de protocolos de autenticación robustos y modernos como OAuth2, OpenID Connect o SAML.
+Utilización de métodos de autenticación multifactor (MFA) como SMS, aplicaciones de autenticación o tokens de hardware.
+Almacenamiento de contraseñas de forma segura utilizando algoritmos hash con sal y funciones de derivación de claves como bcrypt o scrypt.
+Implementación de medidas de protección contra ataques de fuerza bruta, relleno de credenciales y ataques de diccionario.
+Limitación de los intentos de inicio de sesión fallidos para evitar ataques de fuerza bruta.
+Implementación de un sistema de bloqueo de cuentas después de un número determinado de intentos fallidos.
+Utilización de un sistema de gestión de identidades y accesos (IAM) para centralizar la gestión de usuarios y permisos.
+Seguridad de Datos:
+
+Encriptación de datos sensibles en la base de datos y durante la transmisión utilizando algoritmos de cifrado robustos como AES-256.
+Implementación de medidas de control de acceso granular para proteger la información confidencial, como el uso de roles y permisos basados en RBAC.
+Monitorización y prevención de fugas de datos mediante la implementación de un sistema DLP (Data Loss Prevention).
+Realización de copias de seguridad regulares de los datos y almacenamiento seguro de las mismas.
+Implementación de un plan de recuperación ante desastres para garantizar la disponibilidad de los datos en caso de un evento crítico.
+Pruebas de Seguridad:
+
+Realización de pruebas de penetración regulares por parte de un equipo de seguridad calificado para identificar y corregir vulnerabilidades en el sistema.
+Implementación de un programa de pruebas de seguridad continuo que incluya pruebas de código, pruebas de aplicaciones web y pruebas de infraestructura.
+Utilización de herramientas de análisis de vulnerabilidades automatizadas para identificar y corregir vulnerabilidades conocidas.
+Monitorización de la actividad del sistema y de la red para detectar comportamientos sospechosos.
 Media Prioridad:
 
-Gestión de vulnerabilidades:
-Monitorización y actualización constante del software para corregir vulnerabilidades conocidas.
-Implementación de un proceso para la rápida detección y respuesta a incidentes de seguridad.
-Capacitación en seguridad:
-Brindar capacitación al personal sobre las mejores prácticas de seguridad informática.
+Gestión de Vulnerabilidades:
+
+Monitorización constante del software y las aplicaciones para identificar y corregir vulnerabilidades conocidas.
+Suscripción a boletines de seguridad y alertas de vulnerabilidades para recibir notificaciones sobre nuevas vulnerabilidades.
+Implementación de un proceso de respuesta a incidentes de seguridad para responder de manera rápida y efectiva a las amenazas.
+Documentación del proceso de respuesta a incidentes de seguridad y entrenamiento del personal.
+Capacitación en Seguridad:
+
+Brindar capacitación al personal sobre las mejores prácticas de seguridad informática, incluyendo temas como:
+Conciencia de seguridad y tipos de amenazas.
+Creación de contraseñas seguras y prácticas de gestión de contraseñas.
+Phishing y ataques de ingeniería social.
+Seguridad en el correo electrónico y navegación web segura.
+Protección de datos personales y confidenciales.
 Concienciar a los usuarios sobre los riesgos de seguridad y cómo protegerse.
+Implementar un programa de concienciación sobre seguridad para mantener al personal actualizado sobre las últimas amenazas.
 Baja Prioridad:
 
-Implementación de un sistema de detección de intrusiones (IDS):
-Monitorización de la red y el sistema para detectar actividades sospechosas.
-Implementación de un sistema de prevención de intrusiones (IPS):
-Bloqueo automático de actividades maliciosas en la red.
+Implementación de un Sistema de Detección de Intrusiones (IDS):
+
+Monitorización de la red y el sistema para detectar actividades sospechosas como intrusiones, escaneos de puertos o ataques de denegación de servicio (DoS).
+Utilización de un IDS basado en red para monitorizar el tráfico de red y detectar intrusiones.
+Utilización de un IDS basado en host para monitorizar la actividad del sistema y detectar malware o rootkits.
+Implementación de un Sistema de Prevención de Intrusiones (IPS):
+
+Bloqueo automático de actividades maliciosas en la red como intrusiones, escaneos de puertos o ataques DoS.
+Utilización de un IPS para complementar el IDS y prevenir ataques antes de que afecten al sistema.
+Configuración del IPS para que solo bloquee el tráfico malicioso y no interfiera con el tráfico legítimo.
