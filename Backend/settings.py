@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'comisiones',
     'afiliados',
     'recompensas',
+    'allauth',  
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
